@@ -124,8 +124,6 @@ export const createSvg = (
       rx: 12,
       ry: 12,
       fill: "var(--ce)",
-      stroke: "#3B4240",
-      "stroke-width": 1,
     }),
 
     ...elements.map((e) => e.svgElements).flat(),

@@ -9,8 +9,8 @@ export const basePalettes = {
   "github-dark": {
     colorBackground: "#0c1116",
     colorDotBorder: "#1b1f230a",
-    colorEmpty: "#161b22",
-    colorDots: ["#161b22", "#01311f", "#034525", "#0f6d31", "#00c647"],
+    colorEmpty: "#1D1F1E",
+    colorDots: ["#1D1F1E", "#01311f", "#034525", "#0f6d31", "#00c647"],
     colorSnake: "purple",
   },
 };

@@ -15,7 +15,7 @@ const drawOptions: DrawOptions = {
   colorEmpty: "#ebedf0",
   colorSnake: "purple",
   dark: {
-    colorEmpty: "#161b22",
+    colorEmpty: "#1D1F1E",
     colorDots: { 1: "#01311f", 2: "#034525", 3: "#0f6d31", 4: "#00c647" },
   },
 };
@@ -26,7 +26,7 @@ const dir = path.resolve(__dirname, "__snapshots__");
 
 try {
   fs.mkdirSync(dir);
-} catch (err) {}
+} catch (err) { }
 
 for (const [key, grid] of Object.entries(grids))
   it(`should generate ${key} svg`, async () => {

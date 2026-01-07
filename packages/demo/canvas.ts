@@ -17,21 +17,21 @@ export const drawOptions: DrawOptions = {
   colorEmpty: "#ebedf0",
   colorSnake: "purple",
   dark: {
-    colorEmpty: "#161b22",
+    colorEmpty: "#1D1F1E",
     colorDots: { 1: "#01311f", 2: "#034525", 3: "#0f6d31", 4: "#00c647" },
   },
 };
 
 const getPointedCell =
   (canvas: HTMLCanvasElement) =>
-  ({ pageX, pageY }: MouseEvent) => {
-    const { left, top } = canvas.getBoundingClientRect();
+    ({ pageX, pageY }: MouseEvent) => {
+      const { left, top } = canvas.getBoundingClientRect();
 
-    const x = Math.floor((pageX - left) / drawOptions.sizeCell) - 1;
-    const y = Math.floor((pageY - top) / drawOptions.sizeCell) - 2;
+      const x = Math.floor((pageX - left) / drawOptions.sizeCell) - 1;
+      const y = Math.floor((pageY - top) / drawOptions.sizeCell) - 2;
 
-    return { x, y };
-  };
+      return { x, y };
+    };
 
 export const createCanvas = ({
   width,
