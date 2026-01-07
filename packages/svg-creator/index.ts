@@ -123,12 +123,14 @@ export const createSvg = (
     optimizeCss(style),
     "</style>",
 
-    // Background rectangle matching the empty grid color
+    // Background rectangle matching the empty grid color with rounded corners
     h("rect", {
       x: -drawOptions.sizeCell,
       y: -drawOptions.sizeCell * 2,
       width,
       height,
+      rx: drawOptions.sizeCell,
+      ry: drawOptions.sizeCell,
       fill: "var(--ce)",
     }),
 
