@@ -116,12 +116,21 @@ export const createSvg = (
     }).replace("/>", ">"),
 
     "<desc>",
-    "Generated with https://github.com/Platane/snk",
+    "Generated with https://github.com/Kongesque/snake.svg",
     "</desc>",
 
     "<style>",
     optimizeCss(style),
     "</style>",
+
+    // Background rectangle matching the empty grid color
+    h("rect", {
+      x: -drawOptions.sizeCell,
+      y: -drawOptions.sizeCell * 2,
+      width,
+      height,
+      fill: "var(--ce)",
+    }),
 
     ...elements.map((e) => e.svgElements).flat(),
 
@@ -141,8 +150,8 @@ const generateColorVar = (drawOptions: DrawOptions) =>
     --cs: ${drawOptions.colorSnake};
     --ce: ${drawOptions.colorEmpty};
     ${Object.entries(drawOptions.colorDots)
-      .map(([i, color]) => `--c${i}:${color};`)
-      .join("")}
+    .map(([i, color]) => `--c${i}:${color};`)
+    .join("")}
     }
     ` +
   (drawOptions.dark
@@ -153,8 +162,8 @@ const generateColorVar = (drawOptions: DrawOptions) =>
         --cs: ${drawOptions.dark.colorSnake || drawOptions.colorSnake};
         --ce: ${drawOptions.dark.colorEmpty};
         ${Object.entries(drawOptions.dark.colorDots)
-          .map(([i, color]) => `--c${i}:${color};`)
-          .join("")}
+      .map(([i, color]) => `--c${i}:${color};`)
+      .join("")}
       }
     }
 `

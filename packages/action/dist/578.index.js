@@ -275,11 +275,19 @@ const createSvg = (grid, cells, chain, drawOptions, animationOptions) => {
             xmlns: "http://www.w3.org/2000/svg",
         }).replace("/>", ">"),
         "<desc>",
-        "Generated with https://github.com/Platane/snk",
+        "Generated with https://github.com/Kongesque/snake.svg",
         "</desc>",
         "<style>",
         optimizeCss(style),
         "</style>",
+        // Background rectangle matching the empty grid color
+        h("rect", {
+            x: -drawOptions.sizeCell,
+            y: -drawOptions.sizeCell * 2,
+            width,
+            height,
+            fill: "var(--ce)",
+        }),
         ...elements.map((e) => e.svgElements).flat(),
         "</svg>",
     ].join("");
