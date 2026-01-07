@@ -10,7 +10,7 @@ export type Options = {
   sizeDot: number;
 };
 
-const lerp = (k: number, a: number, b: number) => (1 - k) * a + k * b;
+
 
 export const createSnake = (
   chain: Snake[],
@@ -26,15 +26,8 @@ export const createSnake = (
     for (let i = cells.length; i--;) snakeParts[i].push(cells[i]);
   }
 
-  const svgElements = snakeParts.map((_, i, { length }) => {
-    // compute snake part size
-    const dMin = sizeDot * 0.8;
-    const dMax = sizeCell * 0.9;
-    const iMax = Math.min(4, length);
-    const u = (1 - Math.min(i, iMax) / iMax) ** 2;
-    const s = lerp(u, dMin, dMax);
-
-    const r = s / 2;
+  const svgElements = snakeParts.map((_, i) => {
+    const r = sizeDot / 2;
 
     return h("circle", {
       class: `s s${i}`,

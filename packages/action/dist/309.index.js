@@ -58,7 +58,6 @@ const minifyCss = (css) => css
 
 
 
-const lerp = (k, a, b) => (1 - k) * a + k * b;
 const createSnake = (chain, { sizeCell, sizeDot }, duration) => {
     const snakeN = chain[0] ? (0,types_snake/* getSnakeLength */.T$)(chain[0]) : 0;
     const snakeParts = Array.from({ length: snakeN }, () => []);
@@ -67,14 +66,8 @@ const createSnake = (chain, { sizeCell, sizeDot }, duration) => {
         for (let i = cells.length; i--;)
             snakeParts[i].push(cells[i]);
     }
-    const svgElements = snakeParts.map((_, i, { length }) => {
-        // compute snake part size
-        const dMin = sizeDot * 0.8;
-        const dMax = sizeCell * 0.9;
-        const iMax = Math.min(4, length);
-        const u = (1 - Math.min(i, iMax) / iMax) ** 2;
-        const s = lerp(u, dMin, dMax);
-        const r = s / 2;
+    const svgElements = snakeParts.map((_, i) => {
+        const r = sizeDot / 2;
         return h("circle", {
             class: `s s${i}`,
             cx: (sizeCell / 2).toFixed(1),
