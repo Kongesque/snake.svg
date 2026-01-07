@@ -129,9 +129,11 @@ export const createSvg = (
       y: -drawOptions.sizeCell * 2,
       width,
       height,
-      rx: drawOptions.sizeCell,
-      ry: drawOptions.sizeCell,
+      rx: 8,
+      ry: 8,
       fill: "var(--ce)",
+      stroke: "#3B4240",
+      "stroke-width": 1,
     }),
 
     ...elements.map((e) => e.svgElements).flat(),
