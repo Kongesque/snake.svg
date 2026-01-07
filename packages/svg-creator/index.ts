@@ -11,7 +11,6 @@ import type { Grid, Color, Empty } from "@snk/types/grid";
 import type { Point } from "@snk/types/point";
 import { createSnake } from "./snake";
 import { createGrid } from "./grid";
-import { createStack } from "./stack";
 import { h } from "./xml-utils";
 import { minifyCss } from "./css-utils";
 
@@ -75,7 +74,7 @@ export const createSvg = (
   animationOptions: { stepDurationMs: number },
 ) => {
   const width = (grid.width + 2) * drawOptions.sizeCell;
-  const height = (grid.height + 5) * drawOptions.sizeCell;
+  const height = (grid.height + 2) * drawOptions.sizeCell;
 
   const duration = animationOptions.stepDurationMs * chain.length;
 
@@ -83,13 +82,6 @@ export const createSvg = (
 
   const elements = [
     createGrid(livingCells, drawOptions, duration),
-    createStack(
-      livingCells,
-      drawOptions,
-      grid.width * drawOptions.sizeCell,
-      (grid.height + 2) * drawOptions.sizeCell,
-      duration,
-    ),
     createSnake(chain, drawOptions, duration),
   ];
 
@@ -129,8 +121,8 @@ export const createSvg = (
       y: -drawOptions.sizeCell * 2,
       width,
       height,
-      rx: 8,
-      ry: 8,
+      rx: 12,
+      ry: 12,
       fill: "var(--ce)",
       stroke: "#3B4240",
       "stroke-width": 1,
