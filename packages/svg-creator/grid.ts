@@ -25,8 +25,6 @@ export const createGrid = (
       stroke-width: 1px;
       stroke: var(--cb);
       animation: none ${duration}ms linear infinite;
-      width: ${sizeDot}px;
-      height: ${sizeDot}px;
     }`,
   ];
 
@@ -53,12 +51,11 @@ export const createGrid = (
     }
 
     svgElements.push(
-      h("rect", {
+      h("circle", {
         class: ["c", id].filter(Boolean).join(" "),
-        x: x * sizeCell + m,
-        y: y * sizeCell + m,
-        rx: sizeDotBorderRadius,
-        ry: sizeDotBorderRadius,
+        cx: x * sizeCell + sizeCell / 2,
+        cy: y * sizeCell + sizeCell / 2,
+        r: sizeDot / 2,
       }),
     );
   }
