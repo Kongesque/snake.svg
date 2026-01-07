@@ -23,7 +23,7 @@ export const createSnake = (
 
   for (const snake of chain) {
     const cells = snakeToCells(snake);
-    for (let i = cells.length; i--; ) snakeParts[i].push(cells[i]);
+    for (let i = cells.length; i--;) snakeParts[i].push(cells[i]);
   }
 
   const svgElements = snakeParts.map((_, i, { length }) => {
@@ -34,18 +34,13 @@ export const createSnake = (
     const u = (1 - Math.min(i, iMax) / iMax) ** 2;
     const s = lerp(u, dMin, dMax);
 
-    const m = (sizeCell - s) / 2;
+    const r = s / 2;
 
-    const r = Math.min(4.5, (4 * s) / sizeDot);
-
-    return h("rect", {
+    return h("circle", {
       class: `s s${i}`,
-      x: m.toFixed(1),
-      y: m.toFixed(1),
-      width: s.toFixed(1),
-      height: s.toFixed(1),
-      rx: r.toFixed(1),
-      ry: r.toFixed(1),
+      cx: (sizeCell / 2).toFixed(1),
+      cy: (sizeCell / 2).toFixed(1),
+      r: r.toFixed(1),
     });
   });
 
