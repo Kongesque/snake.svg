@@ -91,7 +91,7 @@ export const createGif = async (
 
       const canvas = createCanvas(colors.length, 1);
       const ctx = canvas.getContext("2d") as any as CanvasRenderingContext2D;
-      for (let i = colors.length; i--; ) {
+      for (let i = colors.length; i--;) {
         ctx.fillStyle = colors[i];
         ctx.fillRect(i, 0, 1, 1);
       }
@@ -139,6 +139,6 @@ export const withTmpDir = async <T>(
   try {
     return await handler(dir);
   } finally {
-    fs.rmdirSync(dir, { recursive: true });
+    fs.rmSync(dir, { recursive: true });
   }
 };

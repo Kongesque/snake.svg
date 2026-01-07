@@ -3,8 +3,8 @@ description: "Generates a snake game from a github user contributions grid. Outp
 author: "platane"
 
 runs:
-  using: docker
-  image: docker://platane/snk@sha256:b107f810d467a26b1e7ac46751073d1247728421155a47e77f6cd2dc66dcc74c
+  using: node20
+  main: packages/action/dist/index.js
 
 inputs:
   github_user_name:

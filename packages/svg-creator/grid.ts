@@ -14,7 +14,7 @@ export type Options = {
 
 export const createGrid = (
   cells: (Point & { t: number | null; color: Color | Empty })[],
-  { sizeDotBorderRadius, sizeDot, sizeCell }: Options,
+  { sizeDot, sizeCell }: Options,
   duration: number,
 ) => {
   const svgElements: string[] = [];
@@ -31,7 +31,6 @@ export const createGrid = (
   let i = 0;
   for (const { x, y, color, t } of cells) {
     const id = t && "c" + (i++).toString(36);
-    const m = (sizeCell - sizeDot) / 2;
 
     if (t !== null && id) {
       const animationName = id;
