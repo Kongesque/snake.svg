@@ -87,7 +87,7 @@ export const createSvg = (
 
   const viewBox = [
     -drawOptions.sizeCell,
-    -drawOptions.sizeCell * 2,
+    -drawOptions.sizeCell,
     width,
     height,
   ].join(" ");
@@ -118,7 +118,7 @@ export const createSvg = (
     // Background rectangle matching the empty grid color with rounded corners
     h("rect", {
       x: -drawOptions.sizeCell,
-      y: -drawOptions.sizeCell * 2,
+      y: -drawOptions.sizeCell,
       width,
       height,
       rx: 12,
