@@ -7,7 +7,7 @@ export const drawOptions: DrawOptions = {
   sizeDotBorderRadius: 2,
   sizeCell: 16,
   sizeDot: 12,
-  colorDotBorder: "#1b1f230a",
+  colorDotBorder: "transparent",
   colorDots: {
     1: "#9be9a8",
     2: "#40c463",

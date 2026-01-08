@@ -22,8 +22,6 @@ export const createGrid = (
     `.c{
       shape-rendering: geometricPrecision;
       fill: var(--ce);
-      stroke-width: 1px;
-      stroke: var(--cb);
       animation: none ${duration}ms linear infinite;
     }`,
   ];
