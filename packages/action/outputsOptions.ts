@@ -36,8 +36,11 @@ export const parseEntry = (entry: string) => {
   };
   const animationOptions: AnimationOptions = {
     frameByStep: 1,
-    stepDurationMs: 100,
+    stepDurationMs: 80,
   };
+
+  if (sp.has("step_duration"))
+    animationOptions.stepDurationMs = parseInt(sp.get("step_duration")!, 10);
 
   {
     const palette = palettes[sp.get("palette") as keyof typeof palettes];

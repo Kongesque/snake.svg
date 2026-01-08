@@ -20,7 +20,7 @@ const drawOptions: DrawOptions = {
   },
 };
 
-const animationOptions = { stepDurationMs: 100 };
+const animationOptions = { stepDurationMs: 80 };
 
 const dir = path.resolve(__dirname, "__snapshots__");
 
